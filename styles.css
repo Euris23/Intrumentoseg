@@ -1,0 +1,156 @@
+/* Estilos personalizados */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1; /* Fondo más claro */
+}
+
+/* Estilos para la navbar */
+.navbar {
+    background-color: #1a1a1a; /* Fondo oscuro para la navbar */
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: auto;
+}
+
+/* Estilos personalizados */
+.jumbotron {
+    position: relative;
+    background-image: url('https://dummyimage.com/1200x400/000/fff'); /* Imagen de fondo */
+    background-size: cover;
+    color: white;
+    text-align: center;
+    height: 300px; /* Reducir la altura de la imagen */
+}
+/* Estilo para la sección de "Nosotros" */
+.seccion {
+    padding: 60px 0;
+}
+
+.seccion.bg-light {
+    background-color: #f8f9fa;
+}
+
+.seccion .container p {
+    font-size: 1.25rem;
+    color: #343a40;
+}
+
+}
+
+/* Estilo para la sección principal */
+.jumbotron {
+    height: 100vh; /* La sección ocupará toda la altura de la ventana */
+    background-image: url('ruta/a/tu/imagen.jpg'); /* Reemplaza con la URL de tu imagen */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+.jumbotron .display-4 {
+    font-size: 1.5rem; /* Tamaño más pequeño para el texto */
+    color: #fff; /* Cambia el color si es necesario */
+    text-shadow: none; /* Elimina la sombra del texto */
+    margin-top: 100px; /* Ajusta este valor para bajar el texto */
+}
+
+}
+
+/* Estilos para las tarjetas de instrumentos y clases */
+.card {
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+    background-color: #2a2a2a; /* Fondo oscuro para las tarjetas */
+    color: #ffffff; /* Texto blanco en las tarjetas */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); /* Sombra azul en hover */
+}
+
+.card-title {
+    color: #007bff; /* Títulos con color azul llamativo */
+}
+
+/* Estilos para centrar las secciones principales */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #007bff; /* Encabezados en azul llamativo */
+}
+
+
+/* Estilos para la sección de contacto */
+.contact-section {
+    text-align: center;
+    margin: 50px auto; /* Centrar la sección en la página */
+    background-color: #1a1a1a; /* Fondo oscuro para la sección de contacto */
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff; /* Texto blanco en la sección de contacto */
+    max-width: 600px; /* Limitar el ancho para centrar mejor */
+}
+
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+}
+
+.contact-section button {
+    font-size: 1.5rem;
+    background-color: #007bff; /* Botón azul llamativo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.contact-section button:hover {
+    background-color: #0056b3; /* Oscurecer el botón en hover */
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Reducir padding del footer */
+    position: relative;
+    width: 100%;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+footer a {
+    color: #007bff; /* Iconos de redes sociales en azul llamativo */
+}
+
+footer a:hover {
+    color: #ffffff; /* Iconos blancos en hover */
+}
+
+/* Asegurar que la sección de contacto sea visible y centrada */
+.contact-section {
+    padding-bottom: 100px; /* Aumentar el padding inferior para evitar que el footer lo cubra */
+}
