@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#perfil">Perfil</a>
+                <a class="nav-link" href="#inicio">Inicio</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#instrumentos">Instrumentos</a>
@@ -37,37 +37,14 @@
             </li>
         </ul>
     </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        var navCollapse = document.querySelector('.navbar-collapse');
-
-        navLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                if (window.innerWidth < 992) {  // Condición para dispositivos móviles
-                    navCollapse.classList.remove('show');
-                }
-            });
-        });
-    });
-</script>
 </nav>
 
 <!-- Sección principal -->
-<div class="jumbotron jumbotron-fluid d-flex align-items-center">
-    <div class="container text-center">
+<div id="inicio" class="jumbotron jumbotron-fluid">
+    <div class="container">
         <h1 class="display-4">Consigue tu instrumento a muy bajo costo</h1>
     </div>
 </div>
-
-
-<!-- Sección de Nosotros -->
-<section id="nosotros" class="seccion bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Nosotros</h2>
-        <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-</section>
 
 <!-- Sección de Instrumentos -->
 <section id="instrumentos" class="container my-5">
@@ -79,7 +56,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Piano</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-primary btn-block">Ver más...</a>
+                    <a href="https://wa.me/1234567890" class="btn btn-primary btn-block">Ver más...</a>
                 </div>
             </div>
         </div>
@@ -89,7 +66,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Guitarra Eléctrica</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-primary btn-block">Ver más...</a>
+                    <a href="https://wa.me/1234567890" class="btn btn-primary btn-block">Ver más...</a>
                 </div>
             </div>
         </div>
@@ -99,7 +76,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Guitarra Acústica</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-primary btn-block">Ver más...</a>
+                    <a href="https://wa.me/1234567890" class="btn btn-primary btn-block">Ver más...</a>
                 </div>
             </div>
         </div>
@@ -141,10 +118,10 @@
 </section>
 
 <!-- Sección de Contacto -->
-<section id="contacto" class="contact-section container text-center">
+<section id="contacto" class="contact-section container">
     <h2 class="text-center mb-4">Contacto</h2>
     <p class="lead">Si quieres obtener más información sobre alquilar un instrumento o aprender uno, da click a este botón.</p>
-    <a href="https://wa.me/qr/22Y4S6JHZBIAH1" target="_blank" class="btn btn-success">
+    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success">
         <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
     </a>
 </section>
