@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<!-- Contenido de toda la página -->
+<!-- Contenido de la página -->
 
 <!-- Menú de Navegación (Navbar) -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -162,6 +162,27 @@
         <p>&copy; 2024 Alquiler de Instrumentos EG. Todos los derechos reservados.</p>
     </div>
 </footer>
+
+<!-- Script para manejar el cierre del menú en dispositivos móviles -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        var navCollapse = document.querySelector('.navbar-collapse');
+
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                navCollapse.classList.remove('show'); // Oculta el menú al hacer clic en cualquier enlace
+            });
+        });
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            if (!navCollapse.contains(event.target) && !event.target.matches('.navbar-toggler')) {
+                navCollapse.classList.remove('show');
+            }
+        });
+    });
+</script>
 
 <!-- CDN de Bootstrap y dependencias de JavaScript -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
