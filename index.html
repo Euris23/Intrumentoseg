@@ -15,27 +15,6 @@
 
 <!-- Contenido de la página -->
 
-    <!-- CDN de Bootstrap y dependencias de JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Script para cerrar el menú en dispositivos móviles -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-            var navCollapse = document.querySelector('.navbar-collapse');
-
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 992) {  // Condición para dispositivos móviles
-                        navCollapse.classList.remove('show');
-                    }
-                });
-            });
-        });
-    </script>
-
 <!-- Menú de Navegación (Navbar) -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <a class="navbar-brand" href="#">
@@ -77,32 +56,32 @@
             <div class="card">
                 <img src="https://dummyimage.com/350x200/000/fff" class="card-img-top" alt="Instrumento 1">
                 <div class="card-body">
-<h5 class="card-title">Piano</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="https://wa.me/18295705931?text=Hola,%20quiero%20más%20información%20sobre%20el%20Piano." class="btn btn-primary btn-block">Pulsa aquí para obtenerlo</a>
+                    <h5 class="card-title">Piano</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="https://wa.me/18295705931?text=Hola,%20me%20interesa%20el%20Piano." class="btn btn-primary btn-block">Pulsa aquí para obtenerlo</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="col-md-4">
-    <div class="card">
-        <img src="https://dummyimage.com/350x200/000/fff" class="card-img-top" alt="Instrumento 2">
-        <div class="card-body">
-            <h5 class="card-title">Guitarra Eléctrica</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="https://wa.me/18295705931?text=Hola,%20quiero%20más%20información%20sobre%20la%20Guitarra%20Eléctrica." class="btn btn-primary btn-block">Pulsa aquí para obtenerlo</a>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://dummyimage.com/350x200/000/fff" class="card-img-top" alt="Instrumento 2">
+                <div class="card-body">
+                    <h5 class="card-title">Guitarra Eléctrica</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="https://wa.me/18295705931?text=Hola,%20me%20interesa%20la%20Guitarra%20Eléctrica." class="btn btn-primary btn-block">Pulsa aquí para obtenerlo</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="col-md-4">
-    <div class="card">
-        <img src="https://dummyimage.com/350x200/000/fff" class="card-img-top" alt="Instrumento 3">
-        <div class="card-body">
-            <h5 class="card-title">Guitarra Acústica</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="https://wa.me/18295705931?text=Hola,%20quiero%20más%20información%20sobre%20la%20Guitarra%20Acústica." class="btn btn-primary btn-block">Pulsa aquí para obtenerlo</a>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://dummyimage.com/350x200/000/fff" class="card-img-top" alt="Instrumento 3">
+                <div class="card-body">
+                    <h5 class="card-title">Guitarra Acústica</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="https://wa.me/18295705931?text=Hola,%20me%20interesa%20la%20Guitarra%20Acústica." class="btn btn-primary btn-block">Pulsa aquí para obtenerlo</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
     </div>
 </section>
 
@@ -140,6 +119,29 @@
     </div>
 </section>
 
+<!-- Sección de Preguntas Frecuentes -->
+<section id="faq" class="container my-5">
+    <!-- Botón circular de Preguntas Frecuentes -->
+    <button class="btn-faq" id="faqButton">?</button>
+
+    <!-- Modal de FAQ -->
+    <div class="faq-overlay" id="faqOverlay"></div>
+    <div class="faq-modal" id="faqModal">
+        <button class="faq-modal-close" id="faqClose">&times;</button>
+        <div class="faq-modal-header">Preguntas Frecuentes</div>
+        <div class="faq-modal-body">
+            <select id="faqSelect">
+                <option value="">Selecciona una pregunta...</option>
+                <option value="1">¿Cómo funciona el proceso de alquiler?</option>
+                <option value="2">¿Qué instrumentos están disponibles?</option>
+                <option value="3">¿Cuáles son los requisitos para alquilar?</option>
+                <option value="4">¿Cuánto dura el proceso para alquilarlo?</option>
+            </select>
+            <div id="faqContent" class="faq-content"></div>
+        </div>
+    </div>
+</section>
+
 <!-- Sección de Contacto -->
 <section id="contacto" class="contact-section container">
     <h2 class="text-center mb-4">Contacto</h2>
@@ -148,7 +150,6 @@
         <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
     </a>
 </section>
-
 
 <!-- Footer -->
 <footer>
@@ -167,6 +168,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Enlace al archivo JS -->
-<script src="scripts.js"></script>
+<script src="faq.js"></script>
 </body>
 </html>
