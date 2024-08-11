@@ -154,3 +154,87 @@ footer a:hover {
 .contact-section {
     padding-bottom: 100px; /* Aumentar el padding inferior para evitar que el footer lo cubra */
 }
+
+/* Estilos para el botón de Preguntas Frecuentes */
+.btn-faq {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 18px;
+    text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos para el modal de Preguntas Frecuentes */
+.faq-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 9998;
+}
+
+.faq-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.faq-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.faq-modal-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.faq-modal-body {
+    padding: 20px;
+    font-size: 1rem;
+    color: #333;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace; /* Estilo de máquina de escribir */
+}
+
+/* Estilos para el select */
+.faq-modal-body select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.faq-content {
+    font-family: 'Courier New', monospace;
+}
