@@ -4,10 +4,18 @@ body {
     background-color: #f1f1f1; /* Fondo más claro */
 }
 
-/* Estilos para la navbar */
+/* Estilo para la navbar */
 .navbar {
-    background-color: #1a1a1a; /* Fondo oscuro para la navbar */
+    background-color: #1a1a1a; /* Restaura el color de fondo de la navbar al mismo que el del footer */
 }
+
+/* Estilo para el logo en la navbar */
+.navbar .navbar-brand img {
+    width: 90px; /* Ajusta el tamaño del logo a 600px de ancho */
+    height: auto; /* Mantiene la proporción del logo */
+    filter: brightness(0) saturate(100%) invert(17%) sepia(43%) saturate(4287%) hue-rotate(175deg) brightness(96%) contrast(101%); /* Ajusta el color del logo a azul */
+}
+
 
 .navbar-brand img {
     width: 40px;
