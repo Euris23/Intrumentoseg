@@ -100,6 +100,54 @@ h2 {
     color: #007bff; /* Encabezados en azul llamativo */
 }
 
+/* Estilos para la sección de reserva */
+.reservation-section {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 10px;
+    max-width: 600px; /* Limitar el ancho de la sección */
+}
+
+.reservation-section h2 {
+    color: #007bff; /* Título en azul */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
 
 /* Estilos para la sección de contacto */
 .contact-section {
