@@ -1,3 +1,4 @@
+// Funcionalidad para la sección de Preguntas Frecuentes
 document.getElementById('faqButton').addEventListener('click', function() {
     document.getElementById('faqOverlay').style.display = 'block';
     document.getElementById('faqModal').style.display = 'block';
@@ -87,3 +88,46 @@ document.getElementById('faqSelect').addEventListener('change', function() {
         setTimeout(typeWriter, 100); // Comienza a escribir después de 100 ms
     }
 });
+
+// Funcionalidad para la reserva de instrumentos
+document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const instrument = document.getElementById('instrument').value;
+    const dateInput = document.getElementById('date');
+    const selectedDate = new Date(dateInput.value);
+    const today = new Date();
+
+    // Ajustar "today" para solo comparar día, mes y año (ignorar horas)
+    today.setHours(0, 0, 0, 0);
+
+    if (selectedDate < today) {
+        // Establecer un mensaje de validación personalizado
+        dateInput.setCustomValidity('No se puede elegir una fecha anterior al día de hoy. Vuelve a intentarlo.');
+        dateInput.reportValidity(); // Mostrar el mensaje cerca del campo
+        return; // Detener el envío del formulario
+    } else {
+        // Restablecer la validez si la fecha es correcta
+        dateInput.setCustomValidity('');
+    }
+
+    // Formatear la fecha en el formato de día/mes/año
+    const formattedDate = `${selectedDate.getDate().toString().padStart(2, '0')}/${(selectedDate.getMonth() + 1).toString().padStart(2, '0')}/${selectedDate.getFullYear()}`;
+
+    const whatsappMessage = `Hola, me gustaría reservar un ${instrument} para la fecha ${formattedDate}.`;
+
+    const whatsappLink = `https://wa.me/18295705931?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappLink, '_blank');
+});
+
+// Eliminar el mensaje de alerta cuando el usuario intenta cambiar la fecha
+document.getElementById('date').addEventListener('input', function() {
+    this.setCustomValidity(''); // Restablecer la validez del campo
+
+
+
+});
+
+
+
