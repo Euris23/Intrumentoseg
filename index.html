@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<!-- Contenido de la página --->
+<!-- Contenido de la página -->
 
 <!-- Menú de Navegación (Navbar) -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -141,6 +141,27 @@
             <div id="faqContent" class="faq-content"></div>
         </div>
     </div>
+</section>
+
+<!-- Sección de Reserva -->
+
+<section class="reservation-section">
+    <h2>Reserva tu Instrumento</h2>
+    <form id="reservationForm">
+        <div class="form-group">
+            <label for="instrument">Elige tu Instrumento:</label>
+            <select id="instrument" name="instrument" required>
+                <option value="Piano">🎹 Piano</option>
+                <option value="Guitarra Eléctrica">🎸 Guitarra Eléctrica</option>
+                <option value="Guitarra Acústica">🎻 Guitarra Acústica</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date">Elige la Fecha:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <button type="submit">Reservar</button>
+    </form>
 </section>
 
 <!-- Sección de Contacto -->
