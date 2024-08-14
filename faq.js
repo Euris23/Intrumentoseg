@@ -100,10 +100,11 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
 
     // Ajustar "today" para solo comparar día, mes y año (ignorar horas)
     today.setHours(0, 0, 0, 0);
+    selectedDate.setHours(0, 0, 0, 0); // Asegurarse de que la hora sea 00:00:00
 
     if (selectedDate < today) {
         // Establecer un mensaje de validación personalizado
-        dateInput.setCustomValidity('No se puede elegir una fecha anterior al día de hoy. Vuelve a intentarlo.');
+        dateInput.setCustomValidity('Debes elegir una fecha posterior al día de hoy. Vuelve a intentarlo.');
         dateInput.reportValidity(); // Mostrar el mensaje cerca del campo
         return; // Detener el envío del formulario
     } else {
@@ -111,8 +112,11 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
         dateInput.setCustomValidity('');
     }
 
+    // Sumar un día a la fecha seleccionada
+    selectedDate.setDate(selectedDate.getDate() + 1);
+
     // Formatear la fecha en el formato de día/mes/año
-    const formattedDate = `${selectedDate.getDate().toString().padStart(2, '0')}/${(selectedDate.getMonth() + 1).toString().padStart(2, '0')}/${selectedDate.getFullYear()}`;
+    const formattedDate = formatDate(selectedDate);
 
     const whatsappMessage = `Hola, me gustaría reservar un ${instrument} para la fecha ${formattedDate}.`;
 
@@ -121,13 +125,22 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
     window.open(whatsappLink, '_blank');
 });
 
+// Función para formatear la fecha en formato de día/mes/año
+function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Mes empieza en 0
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+}
+
 // Eliminar el mensaje de alerta cuando el usuario intenta cambiar la fecha
 document.getElementById('date').addEventListener('input', function() {
     this.setCustomValidity(''); // Restablecer la validez del campo
-
-
-
 });
+
+
+
+
 
 
 
