@@ -89,11 +89,57 @@ document.getElementById('faqSelect').addEventListener('change', function() {
     }
 });
 
+// Variables para almacenar reservas
+const reservations = [];
+
+// Funcionalidad para cambiar los emojis al seleccionar un instrumento
+document.getElementById('instrument').addEventListener('change', function() {
+    const instrument = this.value;
+    const quantitySelect = document.getElementById('quantity');
+    let emoji = '';
+
+    switch (instrument) {
+        case 'Piano':
+            emoji = '🎹';
+            break;
+        case 'Guitarra Eléctrica':
+            emoji = '🎸';
+            break;
+        case 'Guitarra Acústica':
+            emoji = '🎵';
+            break;
+        default:
+            emoji = '';
+    }
+
+    // Actualizar las opciones en el campo de cantidad
+    for (let i = 0; i < quantitySelect.options.length; i++) {
+        const option = quantitySelect.options[i];
+        option.text = `${option.value} ${emoji}`;
+    }
+
+    // Habilitar el campo de cantidad después de seleccionar un instrumento
+    quantitySelect.disabled = false;
+});
+
+// Eliminar emojis cuando no hay instrumento seleccionado
+document.getElementById('quantity').addEventListener('focus', function() {
+    const instrument = document.getElementById('instrument').value;
+    if (!instrument) {
+        const quantitySelect = this;
+        for (let i = 0; i < quantitySelect.options.length; i++) {
+            const option = quantitySelect.options[i];
+            option.text = option.value;
+        }
+    }
+});
+
 // Funcionalidad para la reserva de instrumentos
 document.getElementById('reservationForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const instrument = document.getElementById('instrument').value;
+    const quantity = document.getElementById('quantity').value;
     const dateInput = document.getElementById('date');
     const selectedDate = new Date(dateInput.value);
     const today = new Date();
@@ -112,17 +158,15 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
         dateInput.setCustomValidity('');
     }
 
-    // Sumar un día a la fecha seleccionada
-    selectedDate.setDate(selectedDate.getDate() + 1);
+    // Agregar la reserva a la lista
+    reservations.push({
+        instrument,
+        quantity,
+        date: formatDate(selectedDate)
+    });
 
-    // Formatear la fecha en el formato de día/mes/año
-    const formattedDate = formatDate(selectedDate);
-
-    const whatsappMessage = `Hola, me gustaría reservar un ${instrument} para la fecha ${formattedDate}.`;
-
-    const whatsappLink = `https://wa.me/18295705931?text=${encodeURIComponent(whatsappMessage)}`;
-    
-    window.open(whatsappLink, '_blank');
+    // Mostrar el modal con opciones
+    document.getElementById('modal').style.display = 'block';
 });
 
 // Función para formatear la fecha en formato de día/mes/año
@@ -133,11 +177,36 @@ function formatDate(date) {
     return `${day}/${month}/${year}`;
 }
 
-// Eliminar el mensaje de alerta cuando el usuario intenta cambiar la fecha
-document.getElementById('date').addEventListener('input', function() {
-    this.setCustomValidity(''); // Restablecer la validez del campo
+// Función para cerrar el modal
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Funcionalidad para finalizar reserva
+document.getElementById('finalizeButton').addEventListener('click', function() {
+    closeModal();
+
+    // Construir el mensaje para WhatsApp con todas las reservas
+    let whatsappMessage = 'Hola, me gustaría reservar los siguientes instrumentos:\n';
+    reservations.forEach(reservation => {
+        whatsappMessage += `Instrumento: ${reservation.instrument}, Cantidad: ${reservation.quantity}, Fecha: ${reservation.date}\n`;
+    });
+
+    const whatsappLink = `https://wa.me/18295705931?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappLink, '_blank');
+
+    // Limpiar las reservas después de finalizar
+    reservations.length = 0;
+    document.getElementById('reservationForm').reset();
+    document.getElementById('quantity').disabled = true;
 });
 
+// Funcionalidad para seguir reservando
+document.getElementById('continueButton').addEventListener('click', function() {
+    closeModal();
+    // El formulario queda listo para la siguiente reserva
+});
 
 
 
