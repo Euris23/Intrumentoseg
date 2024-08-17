@@ -78,7 +78,7 @@
                 <img src="https://dummyimage.com/350x200/000/fff" class="card-img-top" alt="Instrumento 3">
                 <div class="card-body">
                     <h5 class="card-title">Guitarra Acústica</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elite.</p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <a href="https://wa.me/18295705931?text=Hola,%20me%20interesa%20la%20Guitarra%20Acústica." class="btn btn-primary btn-block">Pulsa aquí para obtenerlo</a>
                 </div>
             </div>
@@ -144,16 +144,31 @@
 </section>
 
 <!-- Sección de Reserva -->
-
 <section class="reservation-section">
     <h2>Reserva tu Instrumento</h2>
     <form id="reservationForm">
         <div class="form-group">
             <label for="instrument">Elige tu Instrumento:</label>
             <select id="instrument" name="instrument" required>
+                <option value="" disabled selected>Selecciona un instrumento</option>
                 <option value="Piano">🎹 Piano</option>
                 <option value="Guitarra Eléctrica">🎸 Guitarra Eléctrica</option>
                 <option value="Guitarra Acústica">🎵 Guitarra Acústica</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Cantidad:</label>
+            <select id="quantity" name="quantity" disabled>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
             </select>
         </div>
         <div class="form-group">
@@ -163,6 +178,19 @@
         <button type="submit">Reservar</button>
     </form>
 </section>
+
+<!-- Modal para opciones de reserva -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2>¿Qué deseas hacer?</h2>
+        <button id="finalizeButton">Finalizar Reserva</button>
+        <button id="continueButton">Seguir Reservando más instrumentoas</button>
+    </div>
+</div>
+
+
+
+
 
 <!-- Sección de Contacto -->
 <section id="contacto" class="contact-section container">
