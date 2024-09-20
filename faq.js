@@ -202,6 +202,12 @@ document.getElementById('finalizeButton').addEventListener('click', function() {
     document.getElementById('quantity').disabled = true;
 });
 
+// Funcionalidad para cerrar el modal con la X
+document.getElementById('closeButton').addEventListener('click', function() {
+    closeModal();
+});
+
+
 // Funcionalidad para seguir reservando
 document.getElementById('continueButton').addEventListener('click', function() {
     closeModal();
