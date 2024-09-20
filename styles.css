@@ -6,20 +6,14 @@ body {
 
 /* Estilo para la navbar */
 .navbar {
-    background-color: #1a1a1a; /* Restaura el color de fondo de la navbar al mismo que el del footer */
+    background-color: #1a1a1a; /* Color de fondo de la navbar */
 }
 
 /* Estilo para el logo en la navbar */
 .navbar .navbar-brand img {
-    width: 90px; /* Ajusta el tamaño del logo a 600px de ancho */
+    width: 90px; /* Ajusta el tamaño del logo */
     height: auto; /* Mantiene la proporción del logo */
     filter: brightness(0) saturate(100%) invert(17%) sepia(43%) saturate(4287%) hue-rotate(175deg) brightness(96%) contrast(101%); /* Ajusta el color del logo a azul */
-}
-
-
-.navbar-brand img {
-    width: 40px;
-    height: auto;
 }
 
 /* Estilos personalizados */
@@ -29,8 +23,22 @@ body {
     background-size: cover;
     color: white;
     text-align: center;
-    height: 300px; /* Reducir la altura de la imagen */
+    height: 100vh; /* La sección ocupará toda la altura de la ventana */
+    background-position: center;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el contenido verticalmente */
 }
+
+/* Ajuste del texto en la jumbotron */
+.jumbotron .display-4 {
+    font-size: 1.5rem; /* Tamaño más pequeño para el texto */
+    color: #fff; /* Cambia el color si es necesario */
+    text-shadow: none; /* Elimina la sombra del texto */
+    margin-top: 100px; /* Ajusta este valor para bajar el texto */
+}
+
 /* Estilo para la sección de "Nosotros" */
 .seccion {
     padding: 60px 0;
@@ -43,29 +51,6 @@ body {
 .seccion .container p {
     font-size: 1.25rem;
     color: #343a40;
-}
-
-}
-
-/* Estilo para la sección principal */
-.jumbotron {
-    height: 100vh; /* La sección ocupará toda la altura de la ventana */
-    background-image: url('ruta/a/tu/imagen.jpg'); /* Reemplaza con la URL de tu imagen */
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centra el contenido verticalmente */
-}
-
-.jumbotron .display-4 {
-    font-size: 1.5rem; /* Tamaño más pequeño para el texto */
-    color: #fff; /* Cambia el color si es necesario */
-    text-shadow: none; /* Elimina la sombra del texto */
-    margin-top: 100px; /* Ajusta este valor para bajar el texto */
-}
-
 }
 
 /* Estilos para las tarjetas de instrumentos y clases */
@@ -148,6 +133,48 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+/* Estilo para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* Cambiado a auto para centrar horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative; /* Posicionamiento relativo para la X */
+    top: 50%; /* Para centrar verticalmente */
+    transform: translateY(-50%); /* Ajusta el cuadro hacia arriba para que esté en el centro */
+}
+
+/* Estilo para cerrar el modal */
+.close-button {
+    color: #007bff; /* Color azul para la X */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 10px; /* Espacio desde la parte superior */
+    right: 15px; /* Espacio desde la derecha */
+    font-size: 1.5rem; /* Tamaño de la X */
+    font-weight: bold;
+    cursor: pointer; /* Cambia el cursor al pasar sobre la X */
+}
+
+.close-button:hover {
+    color: #0056b3; /* Color al pasar el mouse */
+}
+
 /* Estilos para el modal */
 .modal {
     display: none; /* Oculto por defecto */
@@ -192,9 +219,6 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-
-
-
 /* Estilos para la sección de contacto */
 .contact-section {
     text-align: center;
@@ -204,8 +228,7 @@ button[type="submit"]:hover {
     border-radius: 10px;
     color: #ffffff; /* Texto blanco en la sección de contacto */
     max-width: 600px; /* Limitar el ancho para centrar mejor */
-}
-
+    padding-bottom: 100px; /* Aumentar el padding inferior para evitar que el footer lo cubra */
 }
 
 .contact-section p {
@@ -225,6 +248,7 @@ button[type="submit"]:hover {
     background-color: #0056b3; /* Oscurecer el botón en hover */
 }
 
+/* Estilos para el footer */
 footer {
     background-color: #1a1a1a;
     color: white;
@@ -252,11 +276,6 @@ footer a:hover {
     color: #ffffff; /* Iconos blancos en hover */
 }
 
-/* Asegurar que la sección de contacto sea visible y centrada */
-.contact-section {
-    padding-bottom: 100px; /* Aumentar el padding inferior para evitar que el footer lo cubra */
-}
-
 /* Estilos para el botón de Preguntas Frecuentes */
 .btn-faq {
     display: block;
@@ -276,6 +295,70 @@ footer a:hover {
     border: none;
     cursor: pointer;
 }
+
+/* Estilos exclusivos para la galería */
+#galeria {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+#galeria .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en todos los dispositivos */
+    grid-gap: 15px;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+#galeria .cuadrado-perfecto {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Relación de aspecto 1:1 para cuadrados perfectos */
+    overflow: hidden;
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); /* Sombra azul */
+}
+
+#galeria .cuadrado-perfecto img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que las imágenes se ajusten al cuadrado */
+    filter: grayscale(1); /* Escala de grises */
+    transition: filter 0.3s ease;
+}
+
+#galeria .cuadrado-perfecto:hover img {
+    filter: grayscale(0); /* Elimina la escala de grises al hacer hover */
+}
+
+#galeria .cuadrado-perfecto h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+#galeria .cuadrado-perfecto:hover h4 {
+    opacity: 0; /* Oculta el texto al hacer hover */
+}
+
+/* Aseguramos que en pantallas muy pequeñas también se mantengan dos columnas */
+@media (max-width: 576px) {
+    #galeria .container {
+        grid-template-columns: repeat(2, 1fr); /* Mantiene dos columnas en dispositivos pequeños */
+    }
+}
+
+
+
 
 /* Estilos para el modal de Preguntas Frecuentes */
 .faq-overlay {
@@ -329,14 +412,16 @@ footer a:hover {
     font-family: 'Courier New', monospace; /* Estilo de máquina de escribir */
 }
 
-/* Estilos para el select */
 .faq-modal-body select {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
     margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.faq-content {
-    font-family: 'Courier New', monospace;
+.faq-modal-footer {
+    padding: 10px;
+    text-align: center;
 }
