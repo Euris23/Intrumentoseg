@@ -24,7 +24,7 @@ body {
 /* Estilos personalizados */
 .jumbotron {
     position: relative;
-    background-image: url('imagenes/logoprincipal.jpg'); /* Imagen de fondo */
+    background-image: url('imagenes/logoprincipal.png'); /* Imagen de fondo */
     background-size: cover;
     color: white;
     text-align: center;
@@ -429,3 +429,4 @@ footer a:hover {
     padding: 10px;
     text-align: center;
 }
+
